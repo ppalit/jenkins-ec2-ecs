@@ -8,11 +8,6 @@ jenkins:
       - "USER:Overall/Administer:admin"
       - "USER:Overall/Read:anonymous"
   clouds:
-  - ecs:
-      jenkinsUrl: "http://52.90.93.117:8080/"
-      name: "ecs"
-      numExecutors: 1
-      regionName: "us-iso-east-1"
   - docker:
       containerCap: 5
       dockerApi:
@@ -52,16 +47,15 @@ jenkins:
       name: "all"
   projectNamingStrategy: "standard"
   quietPeriod: 5
-  remotingSecurity:
-    enabled: true
   scmCheckoutRetryCount: 0
   securityRealm:
     local:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "admin"
-        name: "Administrator"
+      - id: "${JENKINS_ADMIN_USERNAME:-admin}"
+        name: "${JENKINS_ADMIN_NAME:-Administrator}"
+        password: "${JENKINS_ADMIN_PASSWORD:-adminn}"
         properties:
         - "apiToken"
         - mailer:
