@@ -2,11 +2,6 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
-  authorizationStrategy:
-    globalMatrix:
-      permissions:
-      - "USER:Overall/Administer:admin"
-      - "USER:Overall/Read:anonymous"
   clouds:
   - docker:
       containerCap: 5
@@ -53,10 +48,10 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "${JENKINS_ADMIN_USERNAME:-admin}"
-        name: "${JENKINS_ADMIN_NAME:-Administrator}"
-        password: "${JENKINS_ADMIN_PASSWORD:-adminn}"
+      - id: "admin"
+        name: "Administrator"
         properties:
+        - "myView"
         - "apiToken"
         - mailer:
             emailAddress: "admin@admin.com"
@@ -64,6 +59,106 @@ jenkins:
             providerId: "default"
         - timezone:
             timeZoneName: "America/New_York"
+      - id: "appdev1"
+        name: "appdev1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "appdev1@appdev1.com"
+      - id: "appdev2"
+        name: "appdev2"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "appdev2@appdev2.appdev2"
+      - id: "appdev3"
+        name: "appdev3"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "appdev3@appdev3.appdev3"
+      - id: "appdev4"
+        name: "appdev4"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "appdev4@appdev4.appdev4"
+      - id: "appdev5"
+        name: "appdev5"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "appdev5@appdev5.appdev5"
+      - id: "qauser1"
+        name: "qauser1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "qauser1@qauser1.com"
+      - id: "qauser2"
+        name: "qauser2"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "qauser2@qauser2.com"
+      - id: "rmeng1"
+        name: "rmeng1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "rmeng1@rmeng1.rmeng1"
+      - id: "rmeng2"
+        name: "rmeng2"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "rmeng2@rmeng2.rmeng2"
+      - id: "security1"
+        name: "security1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "security1@security1.com"
   slaveAgentPort: 50000
   updateCenter:
     sites:

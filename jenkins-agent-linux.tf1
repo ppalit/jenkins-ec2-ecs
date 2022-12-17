@@ -1,0 +1,29 @@
+resource "aws_instance" "linux_agent" {
+  ami           = "ami-0b0dcb5067f052a63"
+  instance_type = "t2.micro"
+  iam_instance_profile = aws_iam_instance_profile.jenkins_master.name
+  vpc_security_group_ids = [
+    aws_security_group.jenkins.id
+  ]
+
+
+  root_block_device {
+    delete_on_termination = true
+    volume_size           = 10
+    volume_type           = "gp2"
+  }
+
+  user_data = <<EOF
+    #!/bin/bash
+    yum update -y
+    yum install docker -y
+    usermod -a -G docker jenkins
+    id jenkins
+    newgrp docker
+    yum install python3-pip
+    pip3 install docker-compose
+    systemctl enable docker.service
+    systemctl start docker.service
+    EOF
+
+}
