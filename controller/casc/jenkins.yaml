@@ -40,7 +40,9 @@ jenkins:
   primaryView:
     all:
       name: "all"
-  projectNamingStrategy: "standard"
+  projectNamingStrategy:
+    roleBased:
+      forceExistingJobs: false
   quietPeriod: 5
   scmCheckoutRetryCount: 0
   securityRealm:
