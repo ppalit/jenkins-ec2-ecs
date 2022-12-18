@@ -66,6 +66,7 @@ jobList.each { job ->
                 git(jobGitUrl)
             }
         }
+      }
     }
 }
 

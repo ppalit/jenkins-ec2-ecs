@@ -50,6 +50,7 @@ jenkins:
       users:
       - id: "admin"
         name: "Administrator"
+        password: "${JENKINS_ADMIN_PASSWORD:-adminn}"
         properties:
         - "myView"
         - "apiToken"
@@ -182,6 +183,8 @@ security:
     allowedOnController: false
   gitHostKeyVerificationConfiguration:
     sshHostKeyVerificationStrategy: "noHostKeyVerificationStrategy"
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
   sSHD:
     port: -1
 unclassified:

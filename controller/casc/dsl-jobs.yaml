@@ -5,8 +5,7 @@ jobs:
         scm {
             git {
                 remote { 
-                    url "${JENKINS_JOB_DSL_URL}"
-                    credentials 'SSH_GIT_KEY' 
+                    url "https://github.com/ppalit/jenkins-ec2-ecs.git"
                 }
                 branch '*/main'
                 extensions {

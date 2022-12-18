@@ -1,101 +1,102 @@
-authorizationStrategy:
-    roleBased:
-      roles:
-        global:
-        - assignments:
-          - "admin"
-          name: "admin"
-          pattern: ".*"
-          permissions:
-          - "Overall/Administer"
-        - assignments:
-          - "appdev4"
-          - "appdev5"
-          - "appdev1"
-          - "appdev2"
-          - "appdev3"
-          name: "dev"
-          pattern: ".*"
-          permissions:
-          - "Overall/Read"
-          - "Job/Discover"
-          - "Job/Read"
-          - "Job/Workspace"
-        - assignments:
-          - "qauser1"
-          - "qauser2"
-          name: "qa"
-          pattern: ".*"
-          permissions:
-          - "Overall/Read"
-          - "Job/Discover"
-          - "Job/Read"
-          - "Job/Workspace"
-        - assignments:
-          - "rmeng1"
-          - "rmeng2"
-          name: "rm"
-          pattern: ".*"
-          permissions:
-          - "Overall/Read"
-          - "Job/Discover"
-          - "Job/Read"
-          - "Job/Workspace"
-        - assignments:
-          - "security1"
-          name: "security"
-          pattern: ".*"
-          permissions:
-          - "Overall/Read"
-          - "Job/Discover"
-          - "Job/Read"
-          - "Job/Workspace"
-        items:
-        - assignments:
-          - "appdev1"
-          - "appdev3"
-          name: "AppTeam1"
-          pattern: "DEV-Teams.Team1.*"
-          permissions:
-          - "Job/Move"
-          - "Job/Build"
-          - "Job/Create"
-          - "View/Create"
-          - "Job/Read"
-          - "Run/Replay"
-          - "Run/Delete"
-          - "Job/Cancel"
-          - "Run/Update"
-          - "Job/Delete"
-          - "View/Delete"
-          - "Job/Configure"
-          - "Job/Workspace"
-          - "View/Read"
-          - "View/Configure"
-        - assignments:
-          - "appdev4"
-          - "appdev5"
-          - "appdev2"
-          name: "AppTeam2"
-          pattern: "DEV-Teams.AppDevTeam2.*"
-          permissions:
-          - "Job/Move"
-          - "Job/Build"
-          - "Job/Create"
-          - "View/Create"
-          - "Job/Read"
-          - "Run/Replay"
-          - "Run/Delete"
-          - "Job/Cancel"
-          - "Run/Update"
-          - "Job/Delete"
-          - "View/Delete"
-          - "Job/Configure"
-          - "Job/Workspace"
-          - "View/Read"
-          - "View/Configure"
-        - name: "rm"
-          pattern: "rm.*"
-          permissions:
-          - "Job/Cancel"
-          - "Job/Build"
+jenkins:
+  authorizationStrategy:
+      roleBased:
+        roles:
+          global:
+          - assignments:
+            - "admin"
+            name: "admin"
+            pattern: ".*"
+            permissions:
+            - "Overall/Administer"
+          - assignments:
+            - "appdev4"
+            - "appdev5"
+            - "appdev1"
+            - "appdev2"
+            - "appdev3"
+            name: "dev"
+            pattern: ".*"
+            permissions:
+            - "Overall/Read"
+            - "Job/Discover"
+            - "Job/Read"
+            - "Job/Workspace"
+          - assignments:
+            - "qauser1"
+            - "qauser2"
+            name: "qa"
+            pattern: ".*"
+            permissions:
+            - "Overall/Read"
+            - "Job/Discover"
+            - "Job/Read"
+            - "Job/Workspace"
+          - assignments:
+            - "rmeng1"
+            - "rmeng2"
+            name: "rm"
+            pattern: ".*"
+            permissions:
+            - "Overall/Read"
+            - "Job/Discover"
+            - "Job/Read"
+            - "Job/Workspace"
+          - assignments:
+            - "security1"
+            name: "security"
+            pattern: ".*"
+            permissions:
+            - "Overall/Read"
+            - "Job/Discover"
+            - "Job/Read"
+            - "Job/Workspace"
+          items:
+          - assignments:
+            - "appdev1"
+            - "appdev3"
+            name: "AppTeam1"
+            pattern: "DEV-Teams.Team1.*"
+            permissions:
+            - "Job/Move"
+            - "Job/Build"
+            - "Job/Create"
+            - "View/Create"
+            - "Job/Read"
+            - "Run/Replay"
+            - "Run/Delete"
+            - "Job/Cancel"
+            - "Run/Update"
+            - "Job/Delete"
+            - "View/Delete"
+            - "Job/Configure"
+            - "Job/Workspace"
+            - "View/Read"
+            - "View/Configure"
+          - assignments:
+            - "appdev4"
+            - "appdev5"
+            - "appdev2"
+            name: "AppTeam2"
+            pattern: "DEV-Teams.AppDevTeam2.*"
+            permissions:
+            - "Job/Move"
+            - "Job/Build"
+            - "Job/Create"
+            - "View/Create"
+            - "Job/Read"
+            - "Run/Replay"
+            - "Run/Delete"
+            - "Job/Cancel"
+            - "Run/Update"
+            - "Job/Delete"
+            - "View/Delete"
+            - "Job/Configure"
+            - "Job/Workspace"
+            - "View/Read"
+            - "View/Configure"
+          - name: "rm"
+            pattern: "rm.*"
+            permissions:
+            - "Job/Cancel"
+            - "Job/Build"
