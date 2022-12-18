@@ -20,7 +20,7 @@ jobs:
         }
         steps {
           dsl {
-            external('${JENKINS_JOB_DSL_PATH:-jenkins-as-code/jobs}/*.groovy')
+            external('${JENKINS_JOB_DSL_PATH:-jobs}/*.groovy')
             removeAction('DELETE')
           }
         }
