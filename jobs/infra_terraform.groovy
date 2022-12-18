@@ -43,7 +43,7 @@ folder(basePath) {
     description "Overview of all jobs for " + basePath + "managed by Devops"
 }
 
-folder(servicePath) {
+folder(basePath + "/"+ servicePath) {
     description "Overview of all " + servicePath + " related jobs."
 }
 
