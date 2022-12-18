@@ -56,11 +56,15 @@ jobList.each { job ->
     def jobGitUrl = job.jobGitUrl
     def jobPollingScm = job.jobPollingScm
 
-    multibranchPipelineJob(basePath + "/"+ servicePath +"/" + jobName) {
-        displayName(jobName)
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'repo irl']]])
+    pipelineJob(basePath + "/"+ servicePath +"/" + jobName)  {
         triggers {
             cron(jobPollingScm)
+        }
+        definition {
+        cpsScm {
+            scm {
+                git(jobGitUrl)
+            }
         }
     }
 }
