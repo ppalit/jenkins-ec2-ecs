@@ -23,6 +23,18 @@ jenkins:
         name: "agent"
         pullTimeout: 300
         remoteFs: "/home/jenkins/agent"
+      - connector:
+          attach:
+            user: "jenkins"
+        dockerTemplateBase:
+          cpuPeriod: 0
+          cpuQuota: 0
+          image: "jenkins_agent_terraform:0.0.1"
+        labelString: "terraformAgent"
+        pullStrategy: PULL_NEVER
+        name: "agent"
+        pullTimeout: 300
+        remoteFs: "/home/jenkins/agent"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
