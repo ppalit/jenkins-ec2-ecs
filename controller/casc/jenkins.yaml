@@ -35,6 +35,33 @@ jenkins:
         name: "agent"
         pullTimeout: 300
         remoteFs: "/home/jenkins/agent"
+  - ecs:
+      cluster: "arn:aws:ecs:us-east-1:612489352138:cluster/JenkinsFargateDemo"
+      jenkinsUrl: "http://3.93.218.101:8080/"
+      name: "ECSAgent"
+      regionName: "us-east-1"
+      templates:
+      - assignPublicIp: true
+        cpu: 1024
+        cpuArchitecture: "X86_64"
+        defaultCapacityProvider: false
+        enableExecuteCommand: false
+        image: "jenkins/inbound-agent"
+        label: "ecsAgent"
+        launchType: "FARGATE"
+        memory: 0
+        memoryReservation: 2048
+        networkMode: "awsvpc"
+        operatingSystemFamily: "LINUX"
+        platformVersion: "LATEST"
+        privileged: false
+        remoteFSRoot: "/home/jenkins"
+        securityGroups: "sg-0ef02ced61bdffc25"
+        sharedMemorySize: 0
+        subnets: "subnet-005c959b891a93a55,subnet-0ec2c3f8ecb12844a"
+        templateName: "EcsAgentTemplate"
+        uniqueRemoteFSRoot: false
+      tunnel: "3.93.218.101:50000"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
