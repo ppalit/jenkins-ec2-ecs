@@ -83,6 +83,8 @@ jenkins:
     roleBased:
       forceExistingJobs: false
   quietPeriod: 5
+  remotingSecurity:
+    enabled: true
   scmCheckoutRetryCount: 0
   securityRealm:
     local:
